@@ -24,14 +24,43 @@ class Account:
         else:
             return False
 
-account = Account("Bob", "Bobloves")
+    def toString(self):
+        return "\nUsername: " + self.username + \
+                "\nUsername Length: " + str(len(self.username)) + \
+                "\nPassword: " + self.password + \
+                "\nPassword Length: " + str(len(self.password))
 
-print(account.username)
-print(account.password)
+class Admin(Account):
+    def __init__(self, username, password):
+        super().__init__(username, password)
+        self.mCanChangeOtherAccountDetails = True
 
-newPassword = "BobLoves1"
+    def toString(self):
+        temp = super().toString()
+        temp += "\nCan Change Accounts: " + str(self.mCanChangeOtherAccountDetails)
+        return temp
 
-if account.validate_password(newPassword) == True:
-    account.password_attach(newPassword)
-else:
-    print("Couldn't change password")
+class User(Account):
+    def __init__(self, username, password):
+        super().__init__(username, password)
+        self.mCanChangeOtherAccountDetails = True
+
+    def toString(self):
+        temp = super().toString()
+        temp += "\nCan Change Accounts: " + str(self.mCanChangeOtherAccountDetails)
+        return temp
+
+account = Account("Reece", "Draper")
+print(account.toString())
+
+admin = Admin("Sebastian", "Williamson")
+print(admin.toString())
+
+# This works in python!
+accountsList = [account, admin]
+
+# Polymorphism
+# If you create a variable or collection and define it with the base class you can add any children
+# Specifically in languages that have type declaration (C, C#, C++, Java)
+Admin myList = [account, admin] # This will error
+Account myList = [account, admin] # This will not error
