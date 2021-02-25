@@ -23,18 +23,23 @@ class Account:
             return True
         else:
             return False
-    def ToString(self):
+
+    def toString(self):
         return "\nUsername: " + self.username + \
-                "\nLen of username: " + str(len(self.username)) + \
+                "\nUsername Length: " + str(len(self.username)) + \
                 "\nPassword: " + self.password + \
-                "\nLen of password: " + str(len(self.password))
-                
+                "\nPassword Length: " + str(len(self.password))
 
 class Admin(Account):
-    def __init__(self, username, password, var):
-        super().__init__(username, password)
-        self.AdminAccess = AdminAccess
-    def 
+    def __init__(self, username, password):
+        AllParentData = super().__init__(username, password)
+        self.mCanChangeOtherAccountDetails = True
+    def toString(self):
+        temp = super().toString()
+        temp = temp + "\n password" + str(self.mCanChangeOtherAccountDetails)
 
-AccountVar = Account("Bob", "Carl")
-print(AccountVar.ToString())
+account = Account("Reece", "Draper")
+print(account.toString())
+
+admin = Admin("Sebastian", "Williamson")
+print(admin.toString())
