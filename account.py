@@ -32,14 +32,30 @@ class Account:
 
 class Admin(Account):
     def __init__(self, username, password):
-        AllParentData = super().__init__(username, password)
+        super().__init__(username, password)
         self.mCanChangeOtherAccountDetails = True
     def toString(self):
         temp = super().toString()
-        temp = temp + "\n password" + str(self.mCanChangeOtherAccountDetails)
+        temp = temp + "\n AdminAccess: " + str(self.mCanChangeOtherAccountDetails)
+        return temp
+
+class Teacher(Account):
+    def __init__(self, username, password, subject):
+        super().__init__(username, password)
+        self.subject = subject
+    def toString(self):
+        temp = super().toString()
+        temp = temp + "\n Subject: " + str(self.subject)
+        return temp
+
+        
+
 
 account = Account("Reece", "Draper")
 print(account.toString())
 
 admin = Admin("Sebastian", "Williamson")
 print(admin.toString())
+
+teacher = Teacher("Juan", "Pedro", "C.S.")
+print(teacher.toString())
