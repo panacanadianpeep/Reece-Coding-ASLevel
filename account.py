@@ -23,15 +23,18 @@ class Account:
             return True
         else:
             return False
+    def ToString(self):
+        return "\nUsername: " + self.username + \
+                "\nLen of username: " + str(len(self.username)) + \
+                "\nPassword: " + self.password + \
+                "\nLen of password: " + str(len(self.password))
+                
 
-account = Account("Bob", "Bobloves")
+class Admin(Account):
+    def __init__(self, username, password, var):
+        super().__init__(username, password)
+        self.AdminAccess = AdminAccess
+    def 
 
-print(account.username)
-print(account.password)
-
-newPassword = "BobLoves1"
-
-if account.validate_password(newPassword) == True:
-    account.password_attach(newPassword)
-else:
-    print("Couldn't change password")
+AccountVar = Account("Bob", "Carl")
+print(AccountVar.ToString())
