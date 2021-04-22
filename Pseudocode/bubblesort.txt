@@ -1,0 +1,24 @@
+DECLARE ListToSort : ARRAY [0 : 9] OF INTEGER
+
+ListToSort <-- [3, 6, 1, 4, 7, 8, 4, 6, 4, 7]
+
+DECLARE FirstNumber : INTEGER
+DECLARE SecondNumber : INTEGER
+DECLARE Placeholder : INTEGER
+DECLARE IsSwapped : BOOLEAN
+
+REPEAT
+    IsSwapped <-- FALSE
+    FOR i <-- 0 TO 8
+        FirstNumber <-- ListToSort[i]
+        SecondNumber <-- ListToSort[i + 1]
+        IF FirstNumber > SecondNumber THEN
+            Placeholder <-- FirstNumber
+            FirstNumber <-- SecondNumber
+            SecondNumber <-- Placeholder
+            IsSwapped <-- TRUE
+        ENDIF
+        ListToSort[i] <-- FirstNumber
+        ListToSort[i + 1] <-- SecondNumber
+    NEXT i
+UNTIL IsSwapped = FALSE

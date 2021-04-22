@@ -1,0 +1,15 @@
+DECLARE grade : STRING
+
+REPEAT
+    
+    INPUT "What is your grade: " grade
+
+    IF INT(grade) > 70 THEN
+        OUTPUT "Grade: Distinction"
+    ELSE IF INT(grade) > 60 THEN
+        OUTPUT "Grade: Merit"
+    ELSE IF INT(grade) > 50 THEN
+        OUTPUT "Grade: Pass"
+    ELSE
+        OUTPUT "Grade: Fail"
+UNTIL grade = "exit"
