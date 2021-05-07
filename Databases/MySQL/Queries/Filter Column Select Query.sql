@@ -1,0 +1,1 @@
+SELECT * FROM starwars.stormtroopers WHERE Chipset = 334422331 ORDER BY ID desc;

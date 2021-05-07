@@ -1,0 +1,20 @@
+DECLARE CustomerIdentifer : STRING
+DECLARE length : INTEGER
+DECLARE Count : INTEGER
+
+INPUT "What is your customer identifier" CustomerIdentifer
+
+length <-- LENGTH(CustomerIdentifer)
+
+IF length = 9 THEN
+    FOR i <-- 0 TO 2
+        IF ASC(CustomerIdentifer[length - i])
+            Count <-- Count + 1
+        ENDIF
+    NEXT i
+    IF CustomerIdentifer = 3
+        Count 
+    ENDIF
+ELSE
+
+ENDIF

@@ -1,0 +1,1 @@
+INSERT INTO stormtroopers VALUES(3, "Dark Vader", 334422331, "2040-06-04 06:04:23")

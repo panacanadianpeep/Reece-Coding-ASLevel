@@ -1,0 +1,12 @@
+CREATE TABLE Stormtroopers (
+    IDStormtroopers int NOT NULL,
+    Rank varchar(255) NOT NULL,
+    Chipset varchar(255) NOT NULL,
+    RegistrationDate date NOT NULL
+);
+
+ALTER TABLE Stormtroopers
+ADD PRIMARY KEY (IDStormtroopers);
+
+INSERT INTO Stormtroopers ( IDStormtroopers, Rank, Chipset, RegistrationDate )
+VALUES (1, "Recruit", "i7", "2020-4-5");
